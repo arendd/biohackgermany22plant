@@ -2,10 +2,11 @@
 title: 'BioHackathon Germany 2022'
 title_short: 'BioHackGermany22'
 tags:
-  - NFDI
   - ISA
   - MIAPPE
   - ARC
+  - NFDI
+  - DataPlant
 authors:
   - name: Daniel Arend
     orcid: 0000-0002-2455-5938
@@ -74,31 +75,26 @@ authors_short: Daniel Arend \emph{et al.} **all authors are in alphabetical orde
 
 As part of the BioHackathon Germany 2022, we hereby report on the success of the two projects "MIAPPE Wizard: Enabling easy creation of MIAPPE-compliant ISA metadata for Plant Phenotyping Experiments" and "DataPLANT - Facilitating Research Data Management to combat the reproducibility crisis". Shortly before the actual hackathon, it became apparent to the participants that close coordination between the projects would be very beneficial. Both projects aimed to improve the process of collecting and aggregating metadata on plant experiments, but with different approaches. In the following, we summarize the accomplished work and discuss future developments. 
 
-
-## "MIAPPE Standard -> Introduction" [Daniel, Sebastian,?]
-
-Back in 2015 [@citesAsAuthority:Krajewski2015], the plant community came together to discuss recommendations on how to best capture plant phenotyping experiments in regards to the data and associated metadata. After another year of discussion and looking at different use cases, the formal "minimal information about plant phenotyping experiment" (short MIAPPE, see also https://miappe.org/) with a reference implementation using ISA-Tab was published [@citesAsAuthority:CwiekKupczyska2016]. ISA-Tab is the file representation of the generic ISA (Investigation - Study - Assay) framework [@citesAsAuthority:RoccaSerra2010], where experiments are hierarchically mapped into the three subgroups. In addition to the ISA-Tab representation, there is now also the ISA JSON representation. Since 2020, the current version v1.1 of MIAPPE was released [@citesAsAuthority:Papoutsoglou2020]. With that its scope was extended to also include woody plants (version 1 primarily covered field crops) and was aligned to other metadata standards (DublinCore, Multi-Crop Passport Descriptors), APIs (BreedingAPI, GnpIS-Ephesis), data models (Crop Ontology) and include controlled vocabulary and ISO norms where possible. In their current form, the MIAPPE specifications cover a set of more than 90 core variables and a further, non-exhaustive list of 40 additional environmental variables and experimental factors.
+Back in 2015 [@citesAsAuthority:Krajewski2015], the plant community came together to discuss recommendations on how to best capture plant phenotyping experiments in regards to the data and associated metadata. After another year of discussion and looking at different use cases, the formal "minimal information about plant phenotyping experiment" (short MIAPPE, see also https://miappe.org/) with a reference implementation using ISA-Tab was published [@citesAsAuthority:CwiekKupczyska2016]. ISA-Tab is the file representation of the generic ISA (Investigation - Study - Assay) framework [@citesAsAuthority:RoccaSerra2010], where experiments are hierarchically mapped into the three subgroups. In addition to the ISA-Tab representation, there is now also the ISA JSON representation. Since 2020, the current version v1.1 of MIAPPE was released [@citesAsAuthority:Papoutsoglou2020]. With that, its scope was extended to also include woody plants (version 1 primarily covered field crops) and was aligned to other metadata standards (DublinCore, Multi-Crop Passport Descriptors), APIs (BreedingAPI, GnpIS-Ephesis), data models (Crop Ontology) and include controlled vocabulary and ISO norms where possible. In their current form, the MIAPPE specifications cover a set of more than 90 core variables and a further, non-exhaustive list of 40 additional environmental variables and experimental factors.
 
 Although many in the community welcome and frequently cite this metadata standard, the number of MIAPPE-compliant datasets is very limited. Through conversations with biologists and wetlab scientists, criticism is often voiced that there are far too many metadata fields and no one is eager to fill them. The reason often given is the time-consuming manual work that could be used with perceived more important activities, such as analysing the data.
--    Cooperation between projects
--    Swate/ARC Toolkit vs. Web-Based GUI
-
 
 
 # MIAPPE Wizard: Enabling easy creation of MIAPPE-compliant ISA metadata for Plant Phenotyping Experiments
 
-Experimental research data is only useful to the research community if it is FAIR. In the plant phenomics domain the MIAPPE standard was developed to provide a minimal checklist for relevant metadata attributes and a suitable data model to describe experiments in a FAIR compliant manner. To publish metadata following these guidelines, frameworks like ISA, describing a machine-readable format to bundle the data, can be used. Nevertheless, the hurdle for the data producer to record and manage their experimental metadata is quite high, because of missing data management experience, a diverse set of tools and rare data stewardship support. To overcome these challenges we decided to implement an intuitive graphical user interface, which guides data producers throught the process of describing their experiments. A step-by-step process supported by smart content recommendations and an appropriate formatting in parallel guarantee a sustainable metadata package without the need to be familiar with ISA/MIAPPE standards.
+Experimental research data is only useful to the research community if it is FAIR [@citesAsAuthority:Wilkinson2016]. In the plant phenomics domain the MIAPPE standard was developed to provide a minimal checklist for relevant metadata attributes and a suitable data model to describe experiments in a FAIR compliant manner. To publish metadata following these guidelines, frameworks like ISA, describing a machine-readable format to bundle the data, can be used. Nevertheless, the hurdle for the data producer to record and manage their experimental metadata is quite high, because of missing data management experience, a diverse set of tools and rare data stewardship support. To overcome these challenges we decided to implement an intuitive graphical user interface, which guides data producers throught the process of describing their experiments. A step-by-step process supported by smart content recommendations and an appropriate formatting in parallel guarantee a sustainable metadata package without the need to be familiar with ISA/MIAPPE standards.
 
 
 # DataPLANT - Facilitating Research Data Management to combat the reproducibility crisis
 
-Well maintained research data according to the FAIR principles will benefit everyone. To push towards this goal, the DataPlant consortium proposes the Annotated Research Context (ARC), a FAIR research object built upon existing standards like ISA, CWL and RO-Crate. 
+Well maintained research data according to the FAIR principles will benefit everyone. To push towards this goal, the DataPLANT consortium proposes the Annotated Research Context (ARC), a FAIR research object built upon existing standards like ISA, CWL and RO-Crate. 
 
 A lot of effort went into writing tools and documentation for creating ARCs. At the BioHackathon Germany 2022, we aimed to further integrate these tools with the biological research community, providing our interfaces through openly available REST APIs. Additionally, making the annotation and storing of experimental data as a researcher as frictionless as possible was another goal. For this, findability and quality of the training materials was being improved.
 
-## NFDI Background [Daniel, Sebastian, Cristina ?, Dominik?]
+## ARC Data Container [Lukas]
 
-## ARC Data Container [Lukas, Elisa, Cristina]
+The ARC is a FAIR digital object, designed specifically to store, annotate, collaborate and share plant research data. It can be used to thoroughly describe the whole research cycle, starting from growing the plant and ending with the final processed data. For this, it builds on existing standards, namely ISA, CWL, git and RO-Crate. ISA, and by extension also the ARC, is used for a multi-faceted annotation of the experimental workflow, as it is a standard designed to provide human and machine readable structure, that can be filled with any information. This flexibility allows the ARC to be used for a diverse set of experimental workflows, with plant phenotyping being one. Picking the bits of information relevant to annotate the given experiment may be a tricky task, which is being tackled by checklists. 
+By creating a MIAPPE ARC, researchers can ensure that all the necessary metadata is captured and organized in a structured way, allowing for easier data discovery and reuse. Furthermore, since the MIAPPE standard is quite extensive, it can serve as a useful example for testing the flexibility and scalability of the ARC data container, as it must be able to accommodate a large number of metadata fields and different types of experimental data. Therefore, at the Hackathon we plan to work towards ways to create MIAPPE compliant ARCs.
 
 # Results
 
@@ -118,25 +114,19 @@ Furthermore, we implemented a simple ISA-JSON to ISA-Tab conversion backend base
 The MIAPPE Wizard can submit user generated ISA-JSON to this web service and receives the same information in ISA-Tab representation in response, which it then offers for download through the browser.
 This allows the wizard to output metadata in both ISA-JSON and ISA-Tab format.
 
-
-*(**TODO** "reduced ISA/MIAPPE data model")*[?]
-
 Since ISA-JSON and thus the form generated in the GUI becomes large, the user is easily overwhelmed and can easily lose track. It is therefore essential to provide the user with help to navigate the ISA-JSON object. In MIAPPE Wizard this is realized by a tree view. This is already known to users from many applications and therefore does not require any introduction of the functionality. In the tree view such subobjects are selectable, which have a complex nesting, for example single studies. For lists, such as persons, publications, studies, the content is also displayed, but not clickable, to allow checking for completeness at a glance. The length of the list is displayed next to the node. Clicking a node of the tree view sets the focus of the Wizard to the selected element, hiding everything else. To set the Wizard into its default view, the user can click the Investigation node. To cope with large ISA-JSON objects, the tree view is collapsible.
 
-*(paragraph added by Manuel on 19.01.2023, finished on 31.01.2023)*
+Due to the limited time frame we decided to initially adapt a reduced set of the MIAPPE data model for the first prototype of the MIAPPE Wizard, which contains components such as Persons, Publications or Material. We have discussed different solutions for entering the data and implemented data type specific GUI components. After several user tests we will improve the components and add additional implementations to support the full MIAPPE data model. 
 
-* <del>basic GUI components (forms & questionaires)</del> **[Patrick, done]**
-* reduced ISA/MIAPPE data model
-* <del>tree-navigation implemented</del> **[Manuel, done]**
-* <del>REST Connection to DataPlant OLS --> integrated into correspondig GUI components </del> **[Dennis, done(?)]**
-* <del>set-up backend service to convert ISAJson to ISATab</del> **[Dennis, done(?)]**
-* 
 
 ## ArcCommander API
 
-for generating ARCs from MIAPPE Wizard: 
-* implement ARCCommander REST API **[Oliver]**
-* implement ARC import backend **[Lukas]**
+As part of our work on the DataPLANT project at the BioHackathon Germany 2022, we have made significant progress on consuming MIAPPE ISA-Json, which is output generated by the MIAPPE Wizard, into ARCs. For this we implemented an ArcCommander REST API and the ISA Json import functionality.
+
+Firstly, regarding the ARC-Commander REST API, we have completed the initial development and have successfully tested the API in a local environment. The API is designed to allow users to interact with the ARC data container using standard RESTful API calls, making it easy to integrate into existing workflows and data management systems. For this, the ArcCommander can be run in a server mode, where the functionality usually accessible by CLI commands can now be called using the REST API.
+
+In addition to the ARC-Commander REST API, we have also made significant progress on the ISA-Json import backend. This component is designed to allow users to import existing experimental metadata into a ARC data container, simplifying the process of migrating data from existing data management systems into the ARC format. We have completed the initial implementation of the backend and have tested it with MIAPPE ISA-Json test data, generated using the official ISA-API. 
+
 
 ## DataPlant Ontology Service
 
@@ -147,42 +137,40 @@ In order to expand the ontology service to cover more terms relevant in plant ph
 In order to provide an interface within the DataPLANT project that facilitates the annotation of plant phenotyping experiments, multiple MIAPPE compliant template files were created using the MS Excel add-in Swate (https://github.com/nfdi4plants/Swate). These template files will help users to document metadata and data in MS Excel format. Users can select from different templates those that fit best their needs and provide them with a list of relevant metadata and data terms that they should include in the description of their experiments in order to make them FAIR. The templates cover different sections of the MIAPPE data model checklist v1.1 and are currently under review to reference the newly added MIAPPE ontology. 
 Furthermore, we noticed that the MIAPPE terms could be extended to reach a broader auditorium and cover more use cases. 
 
-
-* <del>integrate additional plant phenotyping relevant ontologies (CREDIT, PPEO)</del> **[Hannah, Elisa, done]**
-* <del>convertion of different ontology formats (obo/owl)</del> **[Hannah, Dennis, done]**
-* <del>develop MIAPPE compliant SWATE templates</del> **[Hannah, Elisa: done, just needs to be uploaded to Github?]**
-
-
 ## DataPlant Tool documentation
 
-* improve ArcCommander documentation **[Andrea, ?]**
+During the BioHackathon Germany 2022, we focussed on consolidating scattered ARC Commander documentation comprising a [general description](https://nfdi4plants.org/nfdi4plants.knowledgebase/docs/implementation/ArcCommander.html) of the Arc Commander, wiki, [quickstart](https://nfdi4plants.org/nfdi4plants.knowledgebase/docs/implementation/QuickStart_arcCommander.html) on the user-centred side as well as [developers' documentation](https://nfdi4plants.github.io/arcCommander-docs/) from different GitHub repositories.  
+
+Now, in a one-stop experience, a centralized Arc Commander collection in the [DataPLANT knowledge base](https://nfdi4plants.org/nfdi4plants.knowledgebase/index.html) is available. Users can gather required information to rapidly create their first ARC, to learn in detail about the background of an ARC and to access the Arc Commander developers' documentation.  
+
+Thereby, the user can focus on working in the Annotated Research Context and providing ontology-driven metadata annotation to overcome the reproducibility crisis[@citesAsAuthority:Baker2016] which was centre stage to both projects presented here. In this line, an [expert quickstart](https://nfdi4plants.org/nfdi4plants.knowledgebase/docs/implementation/QuickStart_arcCommander_expert.html) was added proofing to be a significant shortcut even for beginners and only requiring having created at least one ARC previously.  
+
+Carefully balancing speed and user friendliness with structured information, a wiki and additional information were converted into a [manual](https://nfdi4plants.org/nfdi4plants.knowledgebase/docs/implementation/ArcCommanderManual/index.html) for the ARC Commander and embedded into the knowledge base. At the same time, an overhaul of the sidebar was conducted unifying structure, names (e.g. quickstarts) and creating a more simple visual appearance (see Figure 3).  
+
+[![Screenshot of the DataPLANT Knowledge Base (2023-02-17)](https://i.imgur.com/gsCptvb.jpg)](https://nfdi4plants.org/nfdi4plants.knowledgebase/index.html)
+*Figure 3: Screenshot of the DataPLANT Knowledge Base landing page with the sidebar and link to the contribution guide and tool-centred centralized reorganization (2023-02-17)* 
+
+For repeatedly occurring questions from the community and hands-on sessions, we initiated a new section which is currently under development, the FAQ section, with questions also provided by attendees.  
+
+From the beginning, the community was invited to contribute to the knowledge base via an "edit this page" option located at the bottom of each page. The respective link leading to the document in the GitHub directory which could be edited there and a pull request can be created. Only upon the first pull request, several user contribution instructions were provided.  
+
+In order to bundle contribution routes and to invite community members at all levels to contribute to the knowlege base, a more detailed, previously prepared [contribution guide](https://nfdi4plants.org/nfdi4plants.knowledgebase/docs/CONTRIBUTING.html) went online during the Hackathon. Multiple links were adjusted, explanations and examples were extended like how to construct an appropriate relative path. Also, a link is provided explaining how to test changes or a new contribution in a local environment prior to a pull request which is requested for this. The contribution guide is currently reached via a link on the knowledgebase landing page.  
+
+The kick-off for the online version of this contribution guide complements the collaborative community approach of the [MIAPPE and DataPLANT projects](#Introduction) at the BioHackathon Germany 2022.  
+
+[Lukas?]
+
+As part of our ongoing effort to improve the user experience with generating ARCs, we have been working on improving our user documentation. Previously, the tool documentation was managed by each developer individually, resulting in a sligthly scattered documentation, with some information being hard to find. We recognize, that clear and comprehensive documentation is crucial for users to be able to make the most of our tools, and we are committed to ensuring that our documentation is up to date, easy to navigate, and accessible to all.
+
+To this end, we have been consolidating our user documentation into a centralized knowledgebase. By bringing all of our documentation together in one place, we aim to make it easier for users to find the information they need. Our knowledgebase includes both general information about our tools and specific how-to guides, and is organized by topic and tool.
+
+In addition to the centralized user documentation, we have also been working on improving the documentation for individual tools. These decentral documentations are targeting power users like devolopers and data stewards, to provide more detailed insights into the workings of the tool, including its architecture, APIs, and codebase. 
+
+
 
 # Future Tasks
 
-1. Improve ISA representation for MIAPPE -> submit several suggestions to the GIT discussion
-2. extend implementation of MIAPPE Wizard:
-    *    complete integration of ISA model
-    *    complete integration of MIAPPE checklist
-    *    add interoperability with other tools like e.g. ArcCommander-Webservice and ISA-JSON-to-ISA-TAB converter
-3. test ARC generation with MIAPPE Wizard
-
-
-
-# Citation Typing Ontology annotation
-
-You can use CiTO annotations, as explained in [this BioHackathon Europe 2021 write up](https://raw.githubusercontent.com/biohackrxiv/bhxiv-metadata/main/doc/elixir_biohackathon2021/paper.md) and [this CiTO Pilot](https://www.biomedcentral.com/collections/cito).
-Using this template, you can cite an article and indicate why you cite that article, for instance DisGeNET-RDF [@citesAsAuthority:Queralt2016].
-
-Possible CiTO typing annotation include:
-
-* citesAsDataSource: when you point the reader to a source of data which may explain a claim
-* usesDataFrom: when you reuse somehow (and elaborate on) the data in the cited entity
-* usesMethodIn
-* citesAsAuthority
-* discusses
-* extends
-* agreesWith
-* disagreesWith
+During the several discussions with those present and the virtual participants, it once again became clear, that ISA representation of the MIAPPE data model still has some shortcommings. We have made some suggestions to address these shortcomming and intend to improve the mapping in the coming months. The developed prototype of the MIAPPE Wizard already showed some comprehensive and useful features. In the next few months, we will try to integrate the complete ISA model as well as the full MIAPPE checklist to enable the Wizard to produce resuable metadata. The MIAPPE Wizard project has already used valuable services of DataPlant, such as the ontology lookup, to improve the functionaliy of the user interface. In future, we want to extend the connection and use more services, e.g. the ARC-Commander for exporting ARC containers besides ZIP files.  
 
 ## Acknowledgements
 
