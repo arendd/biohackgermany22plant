@@ -192,5 +192,7 @@ The MIAPPE Wizard project has already leveraged valuable DataPLANT services, suc
 
 ## Acknowledgements
 
-This work was funded by ELIXIR, the research infrastructure for life-science data, by the German Federal Government and the County of North Rhine-Westphalia (de.NBI - the german Network for Bioinformatics Infrastructure), and the DFG in frame of the NFDI4BioDiversity and DataPLANT consortia of the NFDI. Discussions and work were conducted during the 1. BioHackathon Germany in Lutherstadt Wittenberg, Germany. We also thank the remote participants Timo Mühlhaus, Cyril Pommier, Marko Petek, Maja Zagorščak, and Philippe Rocca-Sera for a lively and fruitful discussion.
+This work was funded by ELIXIR, the research infrastructure for life-science data, by the Federal Government of Germany and the county of North Rhine-Westphalia (de.NBI - the german Network for Bioinformatics Infrastructure), and the DFG in frame of the NFDI4BioDiversity and DataPLANT consortia of the NFDI. Discussions and work were conducted during the 1. BioHackathon Germany in Lutherstadt Wittenberg, Germany. We also thank the remote participants Timo Mühlhaus, Cyril Pommier, Marko Petek, Maja Zagorščak, and Philippe Rocca-Sera for a lively and fruitful discussion.  
+
 ## References
+
