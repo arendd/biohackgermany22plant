@@ -1,6 +1,6 @@
 ---
-title: 'BioHackathon Germany 2022'
-title_short: 'BioHackGermany22'
+title: 'Improving Metadata Collection and Aggregation in Plant Phenotyping Experiments with MIAPPE Wizard and DataPLANT'
+title_short: 'Improving Metadata Collection and Aggregation in Plant Phenotyping Experiments'
 tags:
   - ISA
   - MIAPPE
